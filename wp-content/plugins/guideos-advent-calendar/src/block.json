@@ -1,0 +1,68 @@
+{
+  "apiVersion": 3,
+  "name": "guideos/advent-calendar",
+  "title": "GuideOS Advent Calendar",
+  "category": "widgets",
+  "icon": "calendar",
+  "description": "Zeigt einen animierten Adventskalender mit Modal-Inhalten.",
+  "keywords": [
+    "advent",
+    "calendar",
+    "guideos"
+  ],
+  "supports": {
+    "anchor": true,
+    "align": ["wide", "full"],
+    "html": false
+  },
+  "usesContext": ["postId"],
+  "attributes": {
+    "instanceId": {
+      "type": "string",
+      "default": ""
+    },
+    "headline": {
+      "type": "string",
+      "default": "GuideOS Adventskalender"
+    },
+    "subline": {
+      "type": "string",
+      "default": "Jeden Tag eine neue Überraschung."
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#0f1118"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#ff365d"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "doors": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": { "type": "number" },
+          "title": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "imageUrl": { "type": "string" },
+          "imageId": { "type": "number" },
+          "downloadLabel": { "type": "string" },
+          "linkUrl": { "type": "string" },
+          "linkLabel": { "type": "string" },
+          "videoUrl": { "type": "string" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css",
+  "viewScript": "file:./view.js"
+}

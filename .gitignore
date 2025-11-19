@@ -3,6 +3,11 @@ wp-admin/
 wp-includes/
 wp-content/*
 !wp-content/themes/
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/guideos-advent-calendar/
+wp-content/plugins/guideos-advent-calendar/build/
+wp-content/plugins/guideos-advent-calendar/node_modules/
 wp-content/themes/twentytwentyfive/
 !wp-content/themes/guide-os-theme/
 /*.php
