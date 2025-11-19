@@ -14,7 +14,7 @@
     "gutenberg",
     "block"
   ],
-  "author": "GuideOS",
+  "author": "Samuel Rüegger",
   "license": "GPL-2.0",
   "devDependencies": {
     "@wordpress/scripts": "^31.0.0"

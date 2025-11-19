@@ -4,7 +4,7 @@
  * Description: Custom Gutenberg block that renders an advent calendar with animated doors and modal surprises.
  * Version: 1.0.0
  * Plugin URI: https://rueegger.me
- * Author: Samuel Rüeggger
+ * Author: Samuel Rüegger
  * Author URI: https://rueegger.me
  * License: GPLv2
  * Text Domain: guideos-advent
