@@ -13,7 +13,11 @@
   "supports": {
     "anchor": true,
     "align": ["wide", "full"],
-    "html": false
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
   },
   "usesContext": ["postId"],
   "attributes": {
@@ -49,7 +53,7 @@
         "properties": {
           "day": { "type": "number" },
           "title": { "type": "string" },
-          "type": { "type": "string" },
+          "type": { "type": "string", "default": "image" },
           "description": { "type": "string" },
           "imageUrl": { "type": "string" },
           "imageId": { "type": "number" },
