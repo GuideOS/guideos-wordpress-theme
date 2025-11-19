@@ -3,7 +3,10 @@
  * Plugin Name: GuideOS Advent Calendar
  * Description: Custom Gutenberg block that renders an advent calendar with animated doors and modal surprises.
  * Version: 1.0.0
- * Author: GuideOS
+ * Plugin URI: https://rueegger.me
+ * Author: Samuel Rüeggger
+ * Author URI: https://rueegger.me
+ * License: GPLv2
  * Text Domain: guideos-advent
  */
 
