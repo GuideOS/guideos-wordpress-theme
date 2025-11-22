@@ -206,10 +206,34 @@ class AdventCalendar {
 		if ( ! this.modal.wrapper ) {
 			return;
 		}
+
+		// Stop all videos when closing modal
+		this.stopAllVideos();
+
 		this.modal.wrapper.classList.remove( 'is-visible' );
 		this.root.classList.remove( 'has-open-modal' );
 		this.modal.wrapper.hidden = true;
 		this.isModalOpen = false;
+	}
+
+	stopAllVideos() {
+		if ( ! this.modal.body ) {
+			return;
+		}
+
+		// Stop YouTube iframes
+		const iframes = this.modal.body.querySelectorAll( 'iframe' );
+		iframes.forEach( ( iframe ) => {
+			const src = iframe.src;
+			iframe.src = src; // Reload iframe to stop playback
+		} );
+
+		// Stop HTML5 video elements
+		const videos = this.modal.body.querySelectorAll( 'video' );
+		videos.forEach( ( video ) => {
+			video.pause();
+			video.currentTime = 0;
+		} );
 	}
 }
 
