@@ -72,7 +72,24 @@ class Plugin {
 
         $asset = include $asset_path;
         wp_register_script( 'guideos-advent-view', GUIDEOS_ADVENT_URL . 'build/view.js', $asset['dependencies'], $asset['version'], true );
+        wp_script_add_data( 'guideos-advent-view', 'strategy', 'defer' );
         wp_register_style( 'guideos-advent-style', GUIDEOS_ADVENT_URL . 'build/style-index.css', [], GUIDEOS_ADVENT_VERSION );
+    }
+
+    private function enqueue_inline_script(): void {
+        static $script_added = false;
+        if ( $script_added ) {
+            return;
+        }
+
+        $view_js_path = GUIDEOS_ADVENT_PATH . 'build/view.js';
+        if ( file_exists( $view_js_path ) ) {
+            $view_js_content = file_get_contents( $view_js_path );
+            if ( $view_js_content ) {
+                wp_add_inline_script( 'guideos-advent-view', $view_js_content );
+                $script_added = true;
+            }
+        }
     }
 
     public function render_block( array $attributes, string $content, WP_Block $block ): string {
@@ -95,6 +112,9 @@ class Plugin {
         wp_enqueue_style( 'guideos-advent-style' );
 
         $wrapper_attributes = $this->get_wrapper_attributes( $attributes, $instance_id );
+
+        // Embed JavaScript inline to ensure it loads
+        $this->enqueue_inline_script();
 
         ob_start();
         ?>
@@ -317,6 +337,16 @@ class Plugin {
         }
 
         echo '<script type="application/json" id="guideos-advent-data">' . $data . '</script>';
+
+        // Force inline script if view.js is not loaded by WordPress
+        $view_js_path = GUIDEOS_ADVENT_PATH . 'build/view.js';
+        if ( file_exists( $view_js_path ) ) {
+            $view_js_content = file_get_contents( $view_js_path );
+            if ( $view_js_content ) {
+                echo '<script id="guideos-advent-view-inline">' . $view_js_content . '</script>';
+            }
+        }
+
         $this->settings_printed = true;
     }
 
@@ -333,20 +363,24 @@ class Plugin {
     }
 
     private function get_available_day(): int {
-        $timestamp      = current_time( 'timestamp' );
-        $year           = (int) gmdate( 'Y', $timestamp );
-        $december_start = gmmktime( 0, 0, 0, 12, 1, $year );
-        $december_end   = gmmktime( 23, 59, 59, 12, 24, $year );
+        $timezone = new \DateTimeZone( 'Europe/Berlin' );
+        $now      = new \DateTime( 'now', $timezone );
+        $year     = (int) $now->format( 'Y' );
+        $month    = (int) $now->format( 'n' );
+        $day      = (int) $now->format( 'j' );
 
-        if ( $timestamp < $december_start ) {
+        // Before December: no doors available
+        if ( $month < 12 ) {
             return 0;
         }
 
-        if ( $timestamp > $december_end ) {
+        // After December 24: all doors available
+        if ( $month > 12 || ( 12 === $month && $day > 24 ) ) {
             return 24;
         }
 
-        return (int) gmdate( 'j', $timestamp );
+        // During December 1-24: return current day
+        return $day;
     }
 
     private function can_open_day( int $day ): bool {

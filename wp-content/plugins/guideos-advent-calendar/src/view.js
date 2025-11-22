@@ -73,9 +73,17 @@ class AdventCalendar {
 				button.setAttribute( 'aria-pressed', 'true' );
 			}
 
-			if ( day <= unlockedUntil || this.config?.testMode ) {
+			const isUnlocked = day <= unlockedUntil || this.config?.testMode;
+			if ( isUnlocked ) {
+				button.classList.remove( 'is-locked' );
 				button.classList.add( 'is-unlocked' );
 				button.dataset.locked = '0';
+				button.disabled = false;
+			} else {
+				button.classList.add( 'is-locked' );
+				button.classList.remove( 'is-unlocked' );
+				button.dataset.locked = '1';
+				button.disabled = true;
 			}
 		} );
 	}
@@ -121,6 +129,11 @@ class AdventCalendar {
 	async handleDoorClick( button ) {
 		const day = parseInt( button.dataset.day, 10 );
 		if ( Number.isNaN( day ) ) {
+			return;
+		}
+
+		// Ignore clicks on locked doors
+		if ( button.disabled || button.classList.contains( 'is-locked' ) ) {
 			return;
 		}
 

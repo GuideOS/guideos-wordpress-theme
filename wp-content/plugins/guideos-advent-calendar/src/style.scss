@@ -68,6 +68,9 @@
 	transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 	overflow: hidden;
+	width: 100%;
+	display: block;
+	isolation: isolate;
 }
 
 .guideos-advent__door:focus-visible {
@@ -88,6 +91,7 @@
 	border: 1px solid rgba(255, 255, 255, 0.12);
 	opacity: 0.4;
 	transition: opacity 0.3s ease;
+	pointer-events: none;
 }
 
 .guideos-advent__door-panel {
@@ -95,6 +99,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.2rem;
+	pointer-events: none;
 }
 
 .guideos-advent__door-number {
@@ -161,10 +166,12 @@
 	z-index: 999;
 	opacity: 0;
 	transition: opacity 0.3s ease;
+	pointer-events: none;
 }
 
 .guideos-advent__modal.is-visible {
 	opacity: 1;
+	pointer-events: auto;
 }
 
 .guideos-advent__modal-backdrop {
