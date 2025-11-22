@@ -204,22 +204,9 @@ class Plugin {
     }
 
     private function build_style_variables( array $attributes ): string {
-        $map    = [
-            'backgroundColor' => '--guideos-advent-bg',
-            'accentColor'     => '--guideos-advent-accent',
-            'textColor'       => '--guideos-advent-text',
-        ];
-        $styles = [];
-
-        foreach ( $map as $key => $var ) {
-            if ( empty( $attributes[ $key ] ) ) {
-                continue;
-            }
-            $value     = sanitize_text_field( $attributes[ $key ] );
-            $styles[]  = sprintf( '%s:%s', $var, $value );
-        }
-
-        return implode( ';', $styles );
+        // Don't override CSS variables - let the stylesheet handle theming
+        // This allows proper light/dark mode support via @media queries
+        return '';
     }
 
     private function prepare_doors( array $doors ): array {
