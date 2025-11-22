@@ -434,13 +434,13 @@ class Plugin {
                         $embed_url = $this->build_youtube_embed_url( $door['videoUrl'] );
                         if ( $embed_url ) {
                             $embed = sprintf(
-                                '<div class="guideos-advent-modal__video"><iframe src="%s" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
+                                '<iframe src="%s" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                                 esc_url( $embed_url )
                             );
                         }
                     }
                     if ( $embed ) {
-                        echo $embed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo '<div class="guideos-advent-modal__video">' . $embed . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     }
                 }
                 break;
