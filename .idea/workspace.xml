@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="feat(advent-calendar): Add audio playback support for download links&#10;&#10;- Introduced audio player for `.mp3` links in the modal.&#10;- Updated `case 'download'` logic to differentiate between regular downloads and audio files.&#10;- Added new SCSS styles for the audio player, including focus state handling.&#10;- Improved modal layout and centered download button for better UI consistency.">
+    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +196,7 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
-      <workItem from="1764398883518" duration="8348000" />
+      <workItem from="1764398883518" duration="9178000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -350,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764413243536</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries.">
+      <option name="closed" value="true" />
+      <created>1764421689408</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764421689408</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,6 +384,7 @@
     <MESSAGE value="feat(advent-calendar): Add support for full-size image URLs and improve download functionality&#10;&#10;- Introduced `imageUrlFull` to handle unscaled image downloads.&#10;- Updated image upload functionality to sync `imageUrlFull` dynamically.&#10;- Enhanced download button to prioritize original image resolution." />
     <MESSAGE value="feat(advent-calendar): Sync IntelliJ workspace with enhanced image handling updates&#10;&#10;- Updated `workspace.xml` to include recent task changes.&#10;- Reflected enhancements for image handling, including automatic URL sync, preview display, and media controls." />
     <MESSAGE value="feat(advent-calendar): Add audio playback support for download links&#10;&#10;- Introduced audio player for `.mp3` links in the modal.&#10;- Updated `case 'download'` logic to differentiate between regular downloads and audio files.&#10;- Added new SCSS styles for the audio player, including focus state handling.&#10;- Improved modal layout and centered download button for better UI consistency." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(advent-calendar): Add audio playback support for download links&#10;&#10;- Introduced audio player for `.mp3` links in the modal.&#10;- Updated `case 'download'` logic to differentiate between regular downloads and audio files.&#10;- Added new SCSS styles for the audio player, including focus state handling.&#10;- Improved modal layout and centered download button for better UI consistency." />
+    <MESSAGE value="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries." />
   </component>
 </project>
