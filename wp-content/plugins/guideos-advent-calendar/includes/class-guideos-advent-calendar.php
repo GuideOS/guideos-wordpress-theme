@@ -241,14 +241,31 @@ class Plugin {
             $link = esc_url_raw( self::ISO_URL );
         }
 
+        $image_id = isset( $door['imageId'] ) ? (int) $door['imageId'] : 0;
+        $image_url = ! empty( $door['imageUrl'] ) ? esc_url_raw( $door['imageUrl'] ) : '';
+        $image_url_full = ! empty( $door['imageUrlFull'] ) ? esc_url_raw( $door['imageUrlFull'] ) : '';
+
+        // Fallback: Load URLs from imageId if they're missing
+        if ( $image_id && ( empty( $image_url ) || empty( $image_url_full ) ) ) {
+            $image_src = wp_get_attachment_image_src( $image_id, 'large' );
+            $image_src_full = wp_get_attachment_image_src( $image_id, 'full' );
+
+            if ( empty( $image_url ) && $image_src ) {
+                $image_url = esc_url_raw( $image_src[0] );
+            }
+            if ( empty( $image_url_full ) && $image_src_full ) {
+                $image_url_full = esc_url_raw( $image_src_full[0] );
+            }
+        }
+
         return [
             'day'           => $day,
             'title'         => sanitize_text_field( $door['title'] ?? '' ),
             'type'          => $type,
             'description'   => wp_kses_post( $door['description'] ?? '' ),
-            'imageUrl'      => ! empty( $door['imageUrl'] ) ? esc_url_raw( $door['imageUrl'] ) : '',
-            'imageUrlFull'  => ! empty( $door['imageUrlFull'] ) ? esc_url_raw( $door['imageUrlFull'] ) : '',
-            'imageId'       => isset( $door['imageId'] ) ? (int) $door['imageId'] : 0,
+            'imageUrl'      => $image_url,
+            'imageUrlFull'  => $image_url_full,
+            'imageId'       => $image_id,
             'downloadLabel' => sanitize_text_field( $door['downloadLabel'] ?? __( 'Download', 'guideos-advent' ) ),
             'linkUrl'       => $link,
             'linkLabel'     => sanitize_text_field( $door['linkLabel'] ?? __( 'Mehr erfahren', 'guideos-advent' ) ),

@@ -74,7 +74,7 @@ const DoorFields = ( { door, onChange } ) => {
 	const media = useSelect(
 		( select ) => {
 			if ( door.imageId && ! door.imageUrl ) {
-				return select( coreStore ).getMedia( door.imageId );
+				return select( coreStore ).getMedia( door.imageId, { context: 'view' } );
 			}
 			return null;
 		},
@@ -83,11 +83,12 @@ const DoorFields = ( { door, onChange } ) => {
 
 	// Sync imageUrl when media is loaded
 	useEffect( () => {
-		if ( media && ! door.imageUrl ) {
-			set( 'imageUrl', media.source_url || '' );
-			set( 'imageUrlFull', media.source_url || '' );
+		if ( media && media.source_url && ! door.imageUrl ) {
+			const fullUrl = media.media_details?.sizes?.full?.source_url || media.source_url;
+			set( 'imageUrl', media.source_url );
+			set( 'imageUrlFull', fullUrl );
 		}
-	}, [ media ] );
+	}, [ media, door.imageUrl, set ] );
 
 	return (
 		<div className="guideos-advent-door-fields">
