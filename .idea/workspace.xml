@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`.">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: escape special characters in IntelliJ workspace file and update PHP settings&#10;&#10;- Escaped special characters in `workspace.xml` for better compatibility.&#10;- Added `PhpProjectSharedConfiguration` with PHP language level 8.3 to `php.xml`.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig": "24d12a80-8681-4bd0-9a9e-1c07ea7946a8",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "6ab7c3db",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "6abd384f",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig": "0d7ac0fe-6dd9-451d-9149-688db715f5b7",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash": "93be1ed5",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig": "15a5a985-cb97-4e49-87f6-ef0a76880adc",
@@ -92,6 +93,9 @@
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig"
@@ -193,7 +197,7 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
-      <workItem from="1764398883518" duration="427000" />
+      <workItem from="1764398883518" duration="4569000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -291,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764399141219</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chore: escape special characters in IntelliJ workspace file and update PHP settings&#10;&#10;- Escaped special characters in `workspace.xml` for better compatibility.&#10;- Added `PhpProjectSharedConfiguration` with PHP language level 8.3 to `php.xml`.">
+      <option name="closed" value="true" />
+      <created>1764399499051</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764399499051</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +322,7 @@
     <MESSAGE value="Add NewsOverview block with custom rendering and styling&#10;&#10;Introduced a new NewsOverview block template for WordPress, complete with rendering logic in PHP and responsive grid-based styling in CSS. Enhanced block functionality includes dynamic post fetching, custom excerpt length, and hover effects for improved UX. Updated related configuration files to reflect the new block integration." />
     <MESSAGE value="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site." />
     <MESSAGE value="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`." />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`." />
+    <MESSAGE value="chore: escape special characters in IntelliJ workspace file and update PHP settings&#10;&#10;- Escaped special characters in `workspace.xml` for better compatibility.&#10;- Added `PhpProjectSharedConfiguration` with PHP language level 8.3 to `php.xml`." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: escape special characters in IntelliJ workspace file and update PHP settings&#10;&#10;- Escaped special characters in `workspace.xml` for better compatibility.&#10;- Added `PhpProjectSharedConfiguration` with PHP language level 8.3 to `php.xml`." />
   </component>
 </project>
