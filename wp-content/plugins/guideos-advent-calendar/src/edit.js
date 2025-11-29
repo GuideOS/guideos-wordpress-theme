@@ -18,6 +18,8 @@ import {
 	Notice,
 } from '@wordpress/components';
 import { useEffect, useMemo } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
+import { store as coreStore } from '@wordpress/core-data';
 
 const CONTENT_TYPES = [
 	{ label: __( 'Bild', 'guideos-advent' ), value: 'image' },
@@ -66,6 +68,25 @@ const mergeDoors = ( savedDoors = [] ) => {
 
 const DoorFields = ( { door, onChange } ) => {
 	const set = ( key, value ) => onChange( { ...door, [ key ]: value } );
+	
+	// Load image URL if only imageId is present
+	const media = useSelect(
+		( select ) => {
+			if ( door.imageId && ! door.imageUrl ) {
+				return select( coreStore ).getMedia( door.imageId );
+			}
+			return null;
+		},
+		[ door.imageId, door.imageUrl ]
+	);
+
+	// Sync imageUrl when media is loaded
+	useEffect( () => {
+		if ( media?.source_url && ! door.imageUrl ) {
+			set( 'imageUrl', media.source_url );
+		}
+	}, [ media ] );
+
 	return (
 		<div className="guideos-advent-door-fields">
 			<SelectControl
@@ -86,35 +107,48 @@ const DoorFields = ( { door, onChange } ) => {
 				rows={ 3 }
 			/>
 			{ door.type === 'image' && (
-				<div className="guideos-advent-door-media">
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={ ( media ) => {
-								set( 'imageUrl', media?.url || '' );
-								set( 'imageId', media?.id || 0 );
-							} }
-							value={ door.imageId }
-							render={ ( { open } ) => (
-								<Button variant="secondary" onClick={ open }>
-									{ door.imageUrl
-										? __( 'Bild ersetzen', 'guideos-advent' )
-										: __( 'Bild wählen', 'guideos-advent' ) }
-								</Button>
-							) }
-						/>
-					</MediaUploadCheck>
-					{ door.imageUrl && (
-						<Button
-							variant="link"
-							onClick={ () => {
-								set( 'imageUrl', '' );
-								set( 'imageId', 0 );
-							} }
-						>
-							{ __( 'Bild entfernen', 'guideos-advent' ) }
-						</Button>
-					) }
-				</div>
+				<BaseControl label={ __( 'Bild', 'guideos-advent' ) }>
+					<div className="guideos-advent-door-media">
+						{ door.imageUrl && (
+							<div style={{ marginBottom: '10px' }}>
+								<img
+									src={ door.imageUrl }
+									alt={ door.title || __( 'Vorschau', 'guideos-advent' ) }
+									style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+								/>
+							</div>
+						) }
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={ ( media ) => {
+									set( 'imageUrl', media?.url || '' );
+									set( 'imageId', media?.id || 0 );
+								} }
+								value={ door.imageId }
+								render={ ( { open } ) => (
+									<Button variant="secondary" onClick={ open }>
+										{ door.imageUrl
+											? __( 'Bild ersetzen', 'guideos-advent' )
+											: __( 'Bild wählen', 'guideos-advent' ) }
+									</Button>
+								) }
+							/>
+						</MediaUploadCheck>
+						{ door.imageUrl && (
+							<Button
+								variant="link"
+								isDestructive
+								onClick={ () => {
+									set( 'imageUrl', '' );
+									set( 'imageId', 0 );
+								} }
+								style={{ marginLeft: '10px' }}
+							>
+								{ __( 'Bild entfernen', 'guideos-advent' ) }
+							</Button>
+						) }
+					</div>
+				</BaseControl>
 			) }
 			{ door.type === 'download' && (
 				<>
