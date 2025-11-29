@@ -37,6 +37,7 @@ const createDefaultDoors = () =>
 			type: day === 24 ? 'download' : 'image',
 			description: '',
 			imageUrl: '',
+			imageUrlFull: '',
 			imageId: 0,
 			downloadLabel:
 				day === 24
@@ -82,8 +83,9 @@ const DoorFields = ( { door, onChange } ) => {
 
 	// Sync imageUrl when media is loaded
 	useEffect( () => {
-		if ( media?.source_url && ! door.imageUrl ) {
-			set( 'imageUrl', media.source_url );
+		if ( media && ! door.imageUrl ) {
+			set( 'imageUrl', media.source_url || '' );
+			set( 'imageUrlFull', media.source_url || '' );
 		}
 	}, [ media ] );
 
@@ -121,7 +123,10 @@ const DoorFields = ( { door, onChange } ) => {
 						<MediaUploadCheck>
 							<MediaUpload
 								onSelect={ ( media ) => {
+									// Use 'full' size for original, unscaled image
+									const fullUrl = media?.sizes?.full?.url || media?.url || '';
 									set( 'imageUrl', media?.url || '' );
+									set( 'imageUrlFull', fullUrl );
 									set( 'imageId', media?.id || 0 );
 								} }
 								value={ door.imageId }

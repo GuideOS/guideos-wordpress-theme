@@ -247,6 +247,7 @@ class Plugin {
             'type'          => $type,
             'description'   => wp_kses_post( $door['description'] ?? '' ),
             'imageUrl'      => ! empty( $door['imageUrl'] ) ? esc_url_raw( $door['imageUrl'] ) : '',
+            'imageUrlFull'  => ! empty( $door['imageUrlFull'] ) ? esc_url_raw( $door['imageUrlFull'] ) : '',
             'imageId'       => isset( $door['imageId'] ) ? (int) $door['imageId'] : 0,
             'downloadLabel' => sanitize_text_field( $door['downloadLabel'] ?? __( 'Download', 'guideos-advent' ) ),
             'linkUrl'       => $link,
@@ -262,6 +263,7 @@ class Plugin {
             'type'          => 24 === $day ? 'download' : 'image',
             'description'   => '',
             'imageUrl'      => '',
+            'imageUrlFull'  => '',
             'imageId'       => 0,
             'downloadLabel' => 24 === $day ? __( 'GuideOS ISO herunterladen', 'guideos-advent' ) : __( 'Download starten', 'guideos-advent' ),
             'linkUrl'       => 24 === $day ? self::ISO_URL : '',
@@ -469,6 +471,12 @@ class Plugin {
                         '<figure class="guideos-advent-modal__figure"><img src="%s" alt="%s" loading="lazy" decoding="async" /></figure>',
                         esc_url( $door['imageUrl'] ),
                         esc_attr( $door['title'] ?: sprintf( __( 'Tür %d Motiv', 'guideos-advent' ), $door['day'] ) )
+                    );
+                    $download_url = ! empty( $door['imageUrlFull'] ) ? $door['imageUrlFull'] : $door['imageUrl'];
+                    printf(
+                        '<div style="text-align: center; margin-top: 20px;"><a class="guideos-advent-modal__button" href="%s" download><span>%s</span></a></div>',
+                        esc_url( $download_url ),
+                        esc_html( __( 'Download', 'guideos-advent' ) )
                     );
                 }
                 break;
