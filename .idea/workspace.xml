@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: update DDEV database port in IntelliJ configuration files&#10;&#10;- Adjusted database port in `dataSources.xml` for updated local DDEV setup.  &#10;- Minor updates in `workspace.xml` to reflect recent configuration changes.">
+    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="feat(advent-calendar): Enhance image handling with automatic URL sync and preview display&#10;&#10;- Added `useSelect` for dynamic media fetching based on `imageId`.&#10;- Implemented URL synchronization using `useEffect` to ensure images load automatically.&#10;- Updated UI to show image previews and improve media upload interface.&#10;- Introduced better controls for replacing or removing images.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/guideos-advent-calendar/includes/class-guideos-advent-calendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/guideos-advent-calendar/includes/class-guideos-advent-calendar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/guideos-advent-calendar/src/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/guideos-advent-calendar/src/edit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +198,7 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
-      <workItem from="1764398883518" duration="5417000" />
+      <workItem from="1764398883518" duration="7793000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -311,7 +312,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764409129716</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="chore: update IntelliJ workspace with recent task and configuration changes&#10;&#10;- Added a new task entry reflecting updated DDEV database port.&#10;- Updated task durations and local task counter.&#10;- Adjusted changes in `workspace.xml` to sync recent edits.">
+      <option name="closed" value="true" />
+      <created>1764409956385</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1764409956385</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat(advent-calendar): Enhance image handling with automatic URL sync and preview display&#10;&#10;- Added `useSelect` for dynamic media fetching based on `imageId`.&#10;- Implemented URL synchronization using `useEffect` to ensure images load automatically.&#10;- Updated UI to show image previews and improve media upload interface.&#10;- Introduced better controls for replacing or removing images.">
+      <option name="closed" value="true" />
+      <created>1764409970927</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1764409970927</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +349,8 @@
     <MESSAGE value="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`." />
     <MESSAGE value="chore: escape special characters in IntelliJ workspace file and update PHP settings&#10;&#10;- Escaped special characters in `workspace.xml` for better compatibility.&#10;- Added `PhpProjectSharedConfiguration` with PHP language level 8.3 to `php.xml`." />
     <MESSAGE value="chore: update DDEV database port in IntelliJ configuration files&#10;&#10;- Adjusted database port in `dataSources.xml` for updated local DDEV setup.  &#10;- Minor updates in `workspace.xml` to reflect recent configuration changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update DDEV database port in IntelliJ configuration files&#10;&#10;- Adjusted database port in `dataSources.xml` for updated local DDEV setup.  &#10;- Minor updates in `workspace.xml` to reflect recent configuration changes." />
+    <MESSAGE value="chore: update IntelliJ workspace with recent task and configuration changes&#10;&#10;- Added a new task entry reflecting updated DDEV database port.&#10;- Updated task durations and local task counter.&#10;- Adjusted changes in `workspace.xml` to sync recent edits." />
+    <MESSAGE value="feat(advent-calendar): Enhance image handling with automatic URL sync and preview display&#10;&#10;- Added `useSelect` for dynamic media fetching based on `imageId`.&#10;- Implemented URL synchronization using `useEffect` to ensure images load automatically.&#10;- Updated UI to show image previews and improve media upload interface.&#10;- Introduced better controls for replacing or removing images." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(advent-calendar): Enhance image handling with automatic URL sync and preview display&#10;&#10;- Added `useSelect` for dynamic media fetching based on `imageId`.&#10;- Implemented URL synchronization using `useEffect` to ensure images load automatically.&#10;- Updated UI to show image previews and improve media upload interface.&#10;- Introduced better controls for replacing or removing images." />
   </component>
 </project>
