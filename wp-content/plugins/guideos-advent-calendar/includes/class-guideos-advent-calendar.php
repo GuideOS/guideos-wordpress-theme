@@ -448,10 +448,21 @@ class Plugin {
                 break;
             case 'download':
                 if ( ! empty( $door['linkUrl'] ) ) {
+                    $url = $door['linkUrl'];
+                    $is_mp3 = preg_match( '/\.mp3$/i', $url );
+
+                    if ( $is_mp3 ) {
+                        printf(
+                            '<div class="guideos-advent-modal__audio"><audio controls preload="metadata"><source src="%s" type="audio/mpeg">%s</audio></div>',
+                            esc_url( $url ),
+                            esc_html( __( 'Dein Browser unterstützt das Audio-Element nicht.', 'guideos-advent' ) )
+                        );
+                    }
+
                     printf(
-                        '<a class="guideos-advent-modal__button" href="%s" download><span>%s</span></a>',
-                        esc_url( $door['linkUrl'] ),
-                        esc_html( $door['downloadLabel'] )
+                        '<div style="text-align: center; margin-top: 20px;"><a class="guideos-advent-modal__button" href="%s" download><span>%s</span></a></div>',
+                        esc_url( $url ),
+                        esc_html( __( 'Download', 'guideos-advent' ) )
                     );
                 }
                 break;
