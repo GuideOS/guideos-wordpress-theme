@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/blocks/newsoverview/newsoverview.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/blocks/newsoverview/newsoverview.css" afterDir="false" />
+    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`.">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +31,12 @@
     &quot;assignee&quot;: &quot;srueegger&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:srueegger/guideos-wordpress-theme.git&quot;,
-    &quot;accountId&quot;: &quot;cb14b1e4-cabc-4d2c-93fe-c724293db63d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:GuideOS/guideos-wordpress-theme.git",
+    "accountId": "e8fde807-258d-482f-b623-a77e416b5529"
   }
-}</component>
+}]]></component>
   <component name="PhpServers">
     <servers>
       <server host="guideos.de.ddev.site" id="15a5a985-cb97-4e49-87f6-ef0a76880adc" name="guideos.de.ddev.site" use_path_mappings="true">
@@ -59,40 +58,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Datenbankskript.wp_ac_segments.sql und 44 weitere.executor&quot;: &quot;Run&quot;,
-    &quot;Gulp.js.default.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;: &quot;24d12a80-8681-4bd0-9a9e-1c07ea7946a8&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash&quot;: &quot;e91721be&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;: &quot;0d7ac0fe-6dd9-451d-9149-688db715f5b7&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash&quot;: &quot;93be1ed5&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig&quot;: &quot;15a5a985-cb97-4e49-87f6-ef0a76880adc&quot;,
-    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig.hash&quot;: &quot;d217db01&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;news-overview&quot;,
-    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/home/srueegger/Sites/guideos.de/wp-content/themes/guide-os-theme/node_modules/gulp&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/srueegger/Sites/guideos.de&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Datenbankskript.wp_ac_segments.sql und 44 weitere.executor": "Run",
+    "Gulp.js.default.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig": "24d12a80-8681-4bd0-9a9e-1c07ea7946a8",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "6ab7c3db",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig": "0d7ac0fe-6dd9-451d-9149-688db715f5b7",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash": "93be1ed5",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig": "15a5a985-cb97-4e49-87f6-ef0a76880adc",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig.hash": "d217db01",
+    "git-widget-placeholder": "advent-calendar",
+    "js.buildTools.gulp.gulp_package_dir": "/home/srueegger/Sites/guideos.de/wp-content/themes/guide-os-theme/node_modules/gulp",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/srueegger/Sites/guideos.de",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;de.php_perfect.intellij.ddev.index&quot;: [
-      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig&quot;,
-      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;,
-      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;,
-      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;,
-      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;
+  "keyToStringList": {
+    "de.php_perfect.intellij.ddev.index": [
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Datenbankskript.wp_ac_segments.sql und 44 weitere">
     <configuration name="wp_ac_segments.sql und 44 weitere" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/wp-content/uploads/backupbuddy_temp/0z8xexs0kr/wp_ac_segments.sql" />
@@ -173,8 +178,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
-        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PS-252.28238.9" />
+        <option value="bundled-php-predefined-a98d8de5180a-58f58c5035b3-com.jetbrains.php.sharedIndexes-PS-252.28238.9" />
       </set>
     </attachedChunks>
   </component>
@@ -188,6 +193,7 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
+      <workItem from="1764398883518" duration="427000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -277,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741470633416</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`.">
+      <option name="closed" value="true" />
+      <created>1764399141219</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764399141219</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +309,7 @@
     <MESSAGE value="Change block icon to 'megaphone' and update configuration files&#10;&#10;Updated the icon for the 'newsoverview' block to 'megaphone' in `block.json` for better representation. Also adjusted PHPStorm configuration files and database source settings to reflect recent changes in the development environment." />
     <MESSAGE value="Add NewsOverview block with custom rendering and styling&#10;&#10;Introduced a new NewsOverview block template for WordPress, complete with rendering logic in PHP and responsive grid-based styling in CSS. Enhanced block functionality includes dynamic post fetching, custom excerpt length, and hover effects for improved UX. Updated related configuration files to reflect the new block integration." />
     <MESSAGE value="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site." />
+    <MESSAGE value="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update IntelliJ configuration files&#10;&#10;- Adjusted DDEV database port in `dataSources.xml`.&#10;- Escaped special characters in `workspace.xml`.&#10;- Added new PHP components (`MessDetector`, `PHPCSFixer`, `PHPCodeSniffer`, `PhpStan`, `Psalm`) in `php.xml`." />
   </component>
 </project>
