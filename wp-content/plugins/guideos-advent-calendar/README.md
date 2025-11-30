@@ -5,8 +5,9 @@ Custom Gutenberg block that renders a 24-door Advent calendar for guideos.de wit
 ## Features
 
 - Editable headline/subline, colors, and per-door content directly within the block.
-- Supported door types: image reveal, download button (door 24 defaults to the GuideOS 1.0 ISO), external link, or embedded YouTube video.
-- Server-side date guard: outside the 1.–24. December window doors remain locked, with an optional `?guideos_advent_test=1` URL parameter to enter test mode.
+- Supported door types: image reveal (with full-resolution download), download button (door 24 defaults to the GuideOS 1.0 ISO), external link, or embedded YouTube video.
+- MP3 audio support: Download links ending in .mp3 automatically embed an audio player.
+- Server-side date guard: outside the 1.–24. December window doors remain locked.
 - LocalStorage tracking remembers which doors a visitor already opened.
 - Responsive grid, rich animations, and modal overlay tuned to the GuideOS look & feel.
 
@@ -18,10 +19,6 @@ Custom Gutenberg block that renders a 24-door Advent calendar for guideos.de wit
    - Title and description
    - Content type specific options (media picker, download/link label, YouTube URL)
 4. Publish the page. Visitors can open one door per day during Advent; previously opened doors stay unlocked via localStorage.
-
-### Test Mode
-
-Append `?guideos_advent_test=1` to any calendar page URL to unlock every door temporarily (a test badge appears on the block). The token is stored in a secure cookie for 24 hours.
 
 ## Development
 
@@ -47,9 +44,10 @@ The repository ignores `build/` and `node_modules/`, so remember to run `npm ins
 
 ## Manual Test Checklist
 
-- [ ] Without the test parameter, doors after the current date remain locked (verify server response message).
-- [ ] With `?guideos_advent_test=1`, all doors open and the badge is visible.
+- [ ] Doors after the current date remain locked (verify server response message).
 - [ ] Opening a door stores the state in localStorage; reloading the page keeps it open.
 - [ ] Each content type (image, download, link, video) renders the proper modal layout.
+- [ ] Image doors show the full-resolution download button below the image.
+- [ ] MP3 download links automatically embed an audio player.
 - [ ] Door 24 shows the ISO download button by default if no custom URL is set.
 - [ ] Mobile view (≤640px) still displays a readable grid and modal.

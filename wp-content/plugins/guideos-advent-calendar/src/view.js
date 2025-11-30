@@ -61,7 +61,7 @@ class AdventCalendar {
 	}
 
 	applyInitialState() {
-		const unlockedUntil = this.config?.testMode ? 24 : this.config?.availableDay || 0;
+		const unlockedUntil = this.config?.availableDay || 0;
 		this.doorButtons.forEach( ( button ) => {
 			const day = parseInt( button.dataset.day, 10 );
 			if ( Number.isNaN( day ) ) {
@@ -73,7 +73,7 @@ class AdventCalendar {
 				button.setAttribute( 'aria-pressed', 'true' );
 			}
 
-			const isUnlocked = day <= unlockedUntil || this.config?.testMode;
+			const isUnlocked = day <= unlockedUntil;
 			if ( isUnlocked ) {
 				button.classList.remove( 'is-locked' );
 				button.classList.add( 'is-unlocked' );

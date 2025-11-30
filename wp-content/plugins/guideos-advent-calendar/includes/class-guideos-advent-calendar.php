@@ -19,7 +19,6 @@ class Plugin {
     private $instances = [];
     private $settings_printed = false;
 
-    const TEST_COOKIE = 'guideos_advent_test';
     const AJAX_ACTION = 'guideos_advent_open_door';
     const CACHE_PREFIX = 'guideos_advent_';
     const CACHE_TTL    = DAY_IN_SECONDS;
@@ -98,11 +97,8 @@ class Plugin {
             return '';
         }
 
-        $this->maybe_enable_test_cookie();
-
         $doors     = $this->prepare_doors( $attributes['doors'] ?? [] );
         $post_id   = $block->context['postId'] ?? 0;
-        $test_mode = $this->has_test_cookie();
         $available = $this->get_available_day();
 
         $this->cache_instance_payload( $instance_id, $post_id, $doors );
@@ -126,13 +122,10 @@ class Plugin {
                 <?php if ( ! empty( $attributes['subline'] ) ) : ?>
                     <p class="guideos-advent__subline"><?php echo esc_html( $attributes['subline'] ); ?></p>
                 <?php endif; ?>
-                <?php if ( $test_mode ) : ?>
-                    <span class="guideos-advent__badge"><?php esc_html_e( 'Testmodus aktiv – alle Türen offen', 'guideos-advent' ); ?></span>
-                <?php endif; ?>
                 <div class="guideos-advent__grid" role="list">
                     <?php foreach ( $doors as $door ) :
                         $day      = (int) $door['day'];
-                        $locked   = ! $test_mode && $day > $available;
+                        $locked   = $day > $available;
                         $door_cls = [ 'guideos-advent__door' ];
                         if ( $locked ) {
                             $door_cls[] = 'is-locked';
@@ -317,7 +310,6 @@ class Plugin {
             'postId'       => $post_id,
             'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
             'nonce'        => wp_create_nonce( self::AJAX_ACTION ),
-            'testMode'     => $this->has_test_cookie(),
             'availableDay' => $available,
             'doors'        => array_map(
                 static function ( $door ) {
@@ -356,17 +348,6 @@ class Plugin {
         $this->settings_printed = true;
     }
 
-    private function maybe_enable_test_cookie(): void {
-        if ( isset( $_GET['guideos_advent_test'] ) && '1' === $_GET['guideos_advent_test'] ) {
-            $token = wp_hash( site_url() . '|' . time() );
-            setcookie( self::TEST_COOKIE, $token, time() + DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true );
-            $_COOKIE[ self::TEST_COOKIE ] = $token;
-        }
-    }
-
-    private function has_test_cookie(): bool {
-        return ! empty( $_COOKIE[ self::TEST_COOKIE ] );
-    }
 
     private function get_available_day(): int {
         $timezone = new \DateTimeZone( 'Europe/Berlin' );
@@ -417,8 +398,7 @@ class Plugin {
             wp_send_json_error( new WP_Error( 'missing_door', __( 'Tür konnte nicht gefunden werden.', 'guideos-advent' ) ), 404 );
         }
 
-        $test_mode = $this->has_test_cookie();
-        if ( ! $test_mode && ! $this->can_open_day( $day ) ) {
+        if ( ! $this->can_open_day( $day ) ) {
             wp_send_json_error(
                 new WP_Error( 'locked', __( 'Dieses Türchen bleibt noch geschlossen. Schau später wieder vorbei!', 'guideos-advent' ) ),
                 423
@@ -429,7 +409,6 @@ class Plugin {
 
         wp_send_json_success( [
             'door'         => $door,
-            'testMode'     => $test_mode,
             'availableDay' => $this->get_available_day(),
         ] );
     }
