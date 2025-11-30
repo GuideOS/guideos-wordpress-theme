@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries.">
+    <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="feat(advent-calendar): Improve image handling and add fallback for full-size URLs&#10;&#10;- Enhanced `useSelect` and `useEffect` to ensure `imageId` retrieves full-size and default URLs dynamically.&#10;- Added server-side fallback logic to populate missing `imageUrl` and `imageUrlFull` based on `imageId`.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +32,12 @@
     &quot;assignee&quot;: &quot;srueegger&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:GuideOS/guideos-wordpress-theme.git",
-    "accountId": "e8fde807-258d-482f-b623-a77e416b5529"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:GuideOS/guideos-wordpress-theme.git&quot;,
+    &quot;accountId&quot;: &quot;e8fde807-258d-482f-b623-a77e416b5529&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpServers">
     <servers>
       <server host="guideos.de.ddev.site" id="15a5a985-cb97-4e49-87f6-ef0a76880adc" name="guideos.de.ddev.site" use_path_mappings="true">
@@ -68,7 +69,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig": "24d12a80-8681-4bd0-9a9e-1c07ea7946a8",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "6abd384f",
+    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "be56bb0a",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig": "0d7ac0fe-6dd9-451d-9149-688db715f5b7",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash": "93be1ed5",
     "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig": "15a5a985-cb97-4e49-87f6-ef0a76880adc",
@@ -92,6 +93,7 @@
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
+      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
       "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
@@ -196,7 +198,8 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
-      <workItem from="1764398883518" duration="9178000" />
+      <workItem from="1764398883518" duration="10037000" />
+      <workItem from="1764506769994" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -358,7 +361,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764421689408</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="chore: update IntelliJ workspace with recent task and duration changes  &#10;&#10;- Synced `workspace.xml` with updated tasks.  &#10;- Incremented local task counter to reflect new entries.">
+      <option name="closed" value="true" />
+      <created>1764421834742</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1764421834742</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat(advent-calendar): Improve image handling and add fallback for full-size URLs&#10;&#10;- Enhanced `useSelect` and `useEffect` to ensure `imageId` retrieves full-size and default URLs dynamically.&#10;- Added server-side fallback logic to populate missing `imageUrl` and `imageUrlFull` based on `imageId`.">
+      <option name="closed" value="true" />
+      <created>1764421941346</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764421941346</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +404,8 @@
     <MESSAGE value="feat(advent-calendar): Sync IntelliJ workspace with enhanced image handling updates&#10;&#10;- Updated `workspace.xml` to include recent task changes.&#10;- Reflected enhancements for image handling, including automatic URL sync, preview display, and media controls." />
     <MESSAGE value="feat(advent-calendar): Add audio playback support for download links&#10;&#10;- Introduced audio player for `.mp3` links in the modal.&#10;- Updated `case 'download'` logic to differentiate between regular downloads and audio files.&#10;- Added new SCSS styles for the audio player, including focus state handling.&#10;- Improved modal layout and centered download button for better UI consistency." />
     <MESSAGE value="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries." />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update IntelliJ workspace with recent task changes&#10;&#10;- Adjusted `workspace.xml` to sync updated tasks and durations.&#10;- Incremented local task counter to reflect new entries." />
+    <MESSAGE value="chore: update IntelliJ workspace with recent task and duration changes  &#10;&#10;- Synced `workspace.xml` with updated tasks.  &#10;- Incremented local task counter to reflect new entries." />
+    <MESSAGE value="feat(advent-calendar): Improve image handling and add fallback for full-size URLs&#10;&#10;- Enhanced `useSelect` and `useEffect` to ensure `imageId` retrieves full-size and default URLs dynamically.&#10;- Added server-side fallback logic to populate missing `imageUrl` and `imageUrlFull` based on `imageId`." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(advent-calendar): Improve image handling and add fallback for full-size URLs&#10;&#10;- Enhanced `useSelect` and `useEffect` to ensure `imageId` retrieves full-size and default URLs dynamically.&#10;- Added server-side fallback logic to populate missing `imageUrl` and `imageUrlFull` based on `imageId`." />
   </component>
 </project>

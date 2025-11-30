@@ -17,6 +17,7 @@ wp-content/themes/twentytwentyfive/
 !README.md
 node_modules
 package-lock.json
+.idea
 # Ignoriere alle .min.css und .min.css.map Dateien im "blocks"-Ordner
 /*/**/blocks/**/*.min.css
 /*/**/blocks/**/*.min.css.map
