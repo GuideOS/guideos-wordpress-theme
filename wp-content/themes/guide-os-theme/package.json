@@ -1,13 +1,13 @@
 {
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
-    "gulp": "^5.0.0",
+    "autoprefixer": "^10.4.23",
+    "cssnano": "^7.1.2",
+    "gulp": "^5.0.1",
     "gulp-postcss": "^10.0.0",
-    "gulp-rename": "^2.0.0",
+    "gulp-rename": "^2.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "postcss-import": "^16.1.0",
+    "postcss-import": "^16.1.1",
     "postcss-nested": "^7.0.2"
   }
 }
