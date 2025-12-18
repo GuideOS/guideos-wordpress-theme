@@ -11,3 +11,7 @@
 		flex-direction: column-reverse;
 	}
 }
+
+strong {
+	font-weight: 600;
+}
