@@ -11,3 +11,18 @@
 		flex-direction: column-reverse;
 	}
 }
+
+strong {
+	font-weight: 600;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  white-space: nowrap;
+	background: var(--wp--preset--color--custom-blau);
+	color: var(--wp--preset--color--custom-weiss);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
