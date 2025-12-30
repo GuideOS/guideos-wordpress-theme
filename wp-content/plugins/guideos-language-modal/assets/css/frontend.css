@@ -145,14 +145,14 @@
 }
 
 .golm-close-footer-button {
-    background: #dedede;
-    color: #000;
+    background: #1e73be;
+    color: #ffffff;
 }
 
 .golm-close-footer-button:hover,
 .golm-close-footer-button:focus {
-    background: #c9c9c9;
-    color: #000;
+    background: #155a94;
+    color: #ffffff;
     transform: translateY(-1px);
 }
 
@@ -241,14 +241,14 @@
     }
 
     .golm-close-footer-button {
-        background: rgba(222, 222, 222, 0.15);
-        color: #f6f6f6;
+        background: #1e73be;
+        color: #ffffff;
     }
 
     .golm-close-footer-button:hover,
     .golm-close-footer-button:focus {
-        background: rgba(222, 222, 222, 0.25);
-        color: #f6f6f6;
+        background: #2880c9;
+        color: #ffffff;
     }
 
     .golm-modal-footer .button-primary {
