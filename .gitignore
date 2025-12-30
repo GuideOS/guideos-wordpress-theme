@@ -8,6 +8,7 @@ wp-content/plugins/*
 !wp-content/plugins/guideos-advent-calendar/
 wp-content/plugins/guideos-advent-calendar/build/
 wp-content/plugins/guideos-advent-calendar/node_modules/
+!wp-content/plugins/guideos-language-modal/
 wp-content/themes/twentytwentyfive/
 !wp-content/themes/guide-os-theme/
 /*.php
