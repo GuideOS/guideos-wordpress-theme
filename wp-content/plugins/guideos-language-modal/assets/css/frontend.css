@@ -50,30 +50,31 @@
 /* Close Button (X) */
 .golm-close-button {
     position: absolute;
-    top: 28px;
-    right: 28px;
-    background: transparent;
+    top: 24px;
+    right: 24px;
+    background: #dedede;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    padding: 0;
-    width: 36px;
-    height: 36px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .golm-close-button:hover {
-    color: #1e73be;
-    transform: scale(1.1);
+    background: #1e73be;
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
-.golm-close-button .dashicons {
-    width: 36px;
-    height: 36px;
-    font-size: 36px;
+.golm-close-button svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Modal Body */
@@ -230,11 +231,13 @@
     }
 
     .golm-close-button {
+        background: rgba(222, 222, 222, 0.15);
         color: #f6f6f6;
     }
 
     .golm-close-button:hover {
-        color: #3a96e8;
+        background: #1e73be;
+        color: #ffffff;
     }
 
     .golm-close-footer-button {
