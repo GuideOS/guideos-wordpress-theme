@@ -306,7 +306,7 @@ class GuideOS_Language_Modal {
                     </button>
                 </div>
                 <div class="golm-modal-body">
-                    <?php echo wp_kses_post($content); ?>
+                    <?php echo wp_kses_post(wpautop($content)); ?>
                 </div>
                 <div class="golm-modal-footer">
                     <?php if ($cta_enabled === '1' && !empty($cta_url)): ?>
