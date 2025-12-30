@@ -5,6 +5,14 @@
     const STORAGE_KEY = 'golm_modal_closed';
 
     /**
+     * Check if URL parameter forces modal display
+     */
+    function hasForceParameter() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('lngmodal') === '1';
+    }
+
+    /**
      * Check if user's browser language is German
      * Detects: de, de-DE, de-CH, de-AT, etc.
      */
@@ -73,21 +81,33 @@
      * Initialize modal functionality
      */
     function initModal() {
-        // Check if we should show the modal
-        if (isGermanLanguage()) {
-            console.log('German language detected - modal will not be shown');
-            return;
-        }
+        // Check if URL parameter forces modal display
+        const forceModal = hasForceParameter();
 
-        if (wasModalClosed()) {
-            console.log('Modal was already closed in this session');
-            return;
-        }
+        if (forceModal) {
+            console.log('Modal forced via URL parameter (?lngmodal=1)');
+            // Show modal immediately when forced
+            setTimeout(function() {
+                showModal();
+            }, 500);
+            // Continue to setup event handlers below
+        } else {
+            // Check if we should show the modal based on language and session
+            if (isGermanLanguage()) {
+                console.log('German language detected - modal will not be shown');
+                return;
+            }
 
-        // Show modal after a short delay to ensure page is loaded
-        setTimeout(function() {
-            showModal();
-        }, 500);
+            if (wasModalClosed()) {
+                console.log('Modal was already closed in this session');
+                return;
+            }
+
+            // Show modal after a short delay to ensure page is loaded
+            setTimeout(function() {
+                showModal();
+            }, 500);
+        }
 
         // Attach close button handlers
         const closeButton = document.getElementById('golm-close-button');
