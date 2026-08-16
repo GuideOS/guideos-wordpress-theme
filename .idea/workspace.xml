@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bce3c44e-172f-438a-9dc9-29edc40dd31f" name="Änderungen" comment="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site.">
+      <change afterPath="$PROJECT_DIR$/.well-known/security.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security.txt.asc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stardenver@guideos.de-0xD6CB584C94E2612D-pub.asc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/templates/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/guideos.de.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/guideos.de.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/assets/css/darkmode.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/assets/css/darkmode.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/assets/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/assets/css/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/blocks/newsoverview/newsoverview.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/blocks/newsoverview/newsoverview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/patterns/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/patterns/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/theme.json" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/guide-os-theme/theme.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +28,10 @@
     <execution>
       <interpreter name="guideos.de" composer="composer" />
     </execution>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="28565" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -38,6 +53,10 @@
     &quot;accountId&quot;: &quot;cb14b1e4-cabc-4d2c-93fe-c724293db63d&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="PhpServers">
     <servers>
       <server host="guideos.de.ddev.site" id="15a5a985-cb97-4e49-87f6-ef0a76880adc" name="guideos.de.ddev.site" use_path_mappings="true">
@@ -47,7 +66,7 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="guideos.de" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -59,41 +78,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Datenbankskript.wp_ac_segments.sql und 44 weitere.executor": "Run",
-    "Gulp.js.default.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig": "24d12a80-8681-4bd0-9a9e-1c07ea7946a8",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash": "e91721be",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig": "0d7ac0fe-6dd9-451d-9149-688db715f5b7",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash": "93be1ed5",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig": "15a5a985-cb97-4e49-87f6-ef0a76880adc",
-    "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig.hash": "d217db01",
-    "git-widget-placeholder": "news-overview",
-    "js.buildTools.gulp.gulp_package_dir": "/home/srueegger/Sites/guideos.de/wp-content/themes/guide-os-theme/node_modules/gulp",
-    "last_opened_file_path": "/home/srueegger/Sites/guideos.de",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Datenbankskript.wp_ac_segments.sql und 44 weitere.executor&quot;: &quot;Run&quot;,
+    &quot;Gulp.js.default.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.GPG_PINENTRY_CONFIGURATION_PROPOSAL&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;: &quot;24d12a80-8681-4bd0-9a9e-1c07ea7946a8&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig.hash&quot;: &quot;e91721be&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;: &quot;0d7ac0fe-6dd9-451d-9149-688db715f5b7&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig.hash&quot;: &quot;93be1ed5&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig&quot;: &quot;15a5a985-cb97-4e49-87f6-ef0a76880adc&quot;,
+    &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig.hash&quot;: &quot;d217db01&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;news-overview&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/home/srueegger/Sites/guideos.de/wp-content/themes/guide-os-theme/node_modules/gulp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/srueegger/Sites/guideos.de&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "de.php_perfect.intellij.ddev.index": [
-      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig",
-      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
-      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig",
-      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig",
-      "de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig"
+  &quot;keyToStringList&quot;: {
+    &quot;de.php_perfect.intellij.ddev.index&quot;: [
+      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.server.ServerConfig&quot;,
+      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;,
+      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;,
+      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.php.DdevInterpreterConfig&quot;,
+      &quot;de.php_perfect.intellij.ddev.de.php_perfect.intellij.ddev.database.DataSourceConfig&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Datenbankskript.wp_ac_segments.sql und 44 weitere">
+}</component>
+  <component name="RunManager" selected="Database Script.wp_ac_segments.sql und 44 weitere">
     <configuration name="wp_ac_segments.sql und 44 weitere" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/wp-content/uploads/backupbuddy_temp/0z8xexs0kr/wp_ac_segments.sql" />
       <script-file value="$PROJECT_DIR$/wp-content/uploads/backupbuddy_temp/0z8xexs0kr/wp_actionscheduler_actions.sql" />
@@ -173,8 +196,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
-        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.9437.196" />
+        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.9437.196" />
       </set>
     </attachedChunks>
   </component>
@@ -188,6 +211,11 @@
       <updated>1741462014430</updated>
       <workItem from="1741462017490" duration="1506000" />
       <workItem from="1741463528623" duration="7396000" />
+      <workItem from="1786869521547" duration="110000" />
+      <workItem from="1786869646514" duration="661000" />
+      <workItem from="1786870359303" duration="18000" />
+      <workItem from="1786870674219" duration="476000" />
+      <workItem from="1786871225551" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings.">
       <option name="closed" value="true" />
@@ -283,6 +311,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add initial PHPStorm project configuration files&#10;&#10;This commit includes PHPStorm-specific configuration files such as IDE settings, module definitions, VCS mappings, and a `.gitignore` for the `.idea` directory. These files streamline project setup and enforce consistent development environment settings." />
     <MESSAGE value="Add DDEV configuration file for WordPress project setup&#10;&#10;This commit introduces a `.ddev/config.yaml` file tailored for a WordPress project. It specifies project details, such as PHP 8.3, MariaDB 10.11, and the use of nginx-fpm as the webserver. DDEV will streamline local development with predefined configurations and features." />
@@ -296,5 +335,9 @@
     <MESSAGE value="Add NewsOverview block with custom rendering and styling&#10;&#10;Introduced a new NewsOverview block template for WordPress, complete with rendering logic in PHP and responsive grid-based styling in CSS. Enhanced block functionality includes dynamic post fetching, custom excerpt length, and hover effects for improved UX. Updated related configuration files to reflect the new block integration." />
     <MESSAGE value="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site." />
     <option name="LAST_COMMIT_MESSAGE" value="Adjust excerpt formatting in theme functions&#10;&#10;Updated the WordPress theme to modify excerpt behavior. Added functionality to replace the default excerpt ending with ellipses ('...') for improved readability. This change refines content presentation across the site." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

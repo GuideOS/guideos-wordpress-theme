@@ -82,15 +82,17 @@
     }
     .content {
         padding: 15px;
-        background-color: #fff;
-        border-radius: 10px;
+        background-color: var(--gos-surface);
+        color: var(--gos-text);
+        border: 1px solid var(--gos-border);
+        border-radius: var(--gos-radius);
         width: 80%;
         position: absolute;
         z-index: 1;
         bottom: -80%;
         right: 50%;
         transform: translate(50%, -40%);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--gos-shadow-lg);
         h2 {
             font-size: 1.5rem;
             margin: 0;
@@ -127,11 +129,6 @@
             transform: translate(50%, -50%) scale(1.05);
         }
     }
-    @media (prefers-color-scheme: dark) {
-        .content {
-            background-color: #121212;
-            color: #f6f6f6;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-    }
+    /* Hell/Dunkel kommt aus den Tokens in darkmode.css – hier ist keine
+       eigene prefers-color-scheme-Abfrage mehr noetig. */
 }
