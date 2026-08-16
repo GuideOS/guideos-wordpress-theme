@@ -1,28 +1,652 @@
-:where(.wp-site-blocks *:focus) {
-	outline: none !important;
+/* ==========================================================================
+   GuideOS – Globale Styles
+
+   Farben kommen ausschliesslich aus den Tokens in darkmode.css.
+   Hier steht Struktur: Layout, Komponenten, Zustaende.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Basis
+   -------------------------------------------------------------------------- */
+
+body {
+	background-color: var(--gos-bg);
+	color: var(--gos-text);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
+
+strong {
+	color: var(--gos-heading);
+	font-weight: 600;
+}
+
+/* Der Editor setzt bei eingefaerbtem Text ein <mark>. Dessen gelber
+   Browser-Standardhintergrund passt zu keinem der beiden Schemata. */
+mark.has-inline-color {
+	background-color: transparent;
+}
+
+/* In eingefaerbtem Kontext darf <strong> die Farbe oben nicht ueberschreiben,
+   sonst verliert z. B. ein blau markiertes Wort seine Farbe. */
+mark strong,
+a strong,
+[class*="-color"] strong {
+	color: inherit;
+}
+
+/* Fokus nur fuer Tastaturnutzung sichtbar. Vorher wurde der Fokusrahmen
+   global entfernt, was die Seite ohne Maus unbedienbar machte. */
+:where(.wp-site-blocks *:focus) {
+	outline: none;
+}
+
+:where(.wp-site-blocks *:focus-visible) {
+	border-radius: 4px;
+	outline: 2px solid var(--gos-accent-hover);
+	outline-offset: 3px;
+}
+
+::selection {
+	background: var(--gos-accent-soft);
+	color: var(--gos-heading);
+}
+
+/* --------------------------------------------------------------------------
+   Typografie
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--gos-heading);
+	text-wrap: balance;
+}
+
+p,
+li {
+	text-wrap: pretty;
+}
+
+a:where(:not(.wp-element-button)) {
+	color: var(--gos-accent-hover);
+	text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+	text-underline-offset: 0.22em;
+	transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:where(:not(.wp-element-button)):hover {
+	color: var(--gos-cyan);
+	text-decoration-color: currentColor;
+}
+
+/* Inline-Code: ruhiger Chip statt vollflaechig blauem Balken. */
+code {
+	background: var(--gos-surface-2);
+	border: 1px solid var(--gos-border);
+	border-radius: 6px;
+	color: var(--gos-cyan);
+	font-family: var(--wp--preset--font-family--fira-code, ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace);
+	font-size: 0.9em;
+	padding: 0.15em 0.4em;
+	white-space: nowrap;
+}
+
+pre code {
+	background: none;
+	border: 0;
+	padding: 0;
+	white-space: pre;
+}
+
+.wp-block-code {
+	background: var(--gos-surface);
+	border: 1px solid var(--gos-border);
+	border-radius: var(--gos-radius);
+	box-shadow: var(--gos-shadow);
+	overflow-x: auto;
+	padding: 1.1rem 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Eyebrow – kleine Monospace-Marke ueber Ueberschriften
+   -------------------------------------------------------------------------- */
+
+.gos-eyebrow {
+	color: var(--gos-text-dim);
+	font-size: 0.8125rem;
+	letter-spacing: 0.1em;
+	margin-bottom: 0.75rem;
+	text-transform: uppercase;
+}
+
+.gos-eyebrow::before {
+	color: var(--gos-green);
+	content: "// ";
+}
+
+.gos-eyebrow.gos-prompt::before {
+	content: "~$ ";
+}
+
+/* --------------------------------------------------------------------------
+   Ueberschrift mit Akzentbalken
+   -------------------------------------------------------------------------- */
+
+.gos-heading-accent {
+	padding-top: 0.7em;
+	position: relative;
+}
+
+.gos-heading-accent::before {
+	background: linear-gradient(90deg, var(--gos-accent), var(--gos-cyan));
+	border-radius: 2px;
+	content: "";
+	height: 3px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 52px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.gos-hero {
+	border-bottom: 1px solid var(--gos-border);
+	overflow: hidden;
+	position: relative;
+}
+
+/* Technisches Raster, nach unten ausgeblendet. */
+.gos-hero::before {
+	background-image:
+		linear-gradient(to right, var(--gos-border) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--gos-border) 1px, transparent 1px);
+	background-size: 64px 64px;
+	content: "";
+	inset: 0;
+	mask-image: radial-gradient(ellipse 75% 65% at 50% 0%, #000 35%, transparent 100%);
+	opacity: 0.5;
+	pointer-events: none;
+	position: absolute;
+}
+
+/* Weicher Lichtschein hinter der Headline. */
+.gos-hero::after {
+	aspect-ratio: 1;
+	background: radial-gradient(circle, var(--gos-accent-soft), transparent 62%);
+	content: "";
+	left: 50%;
+	pointer-events: none;
+	position: absolute;
+	top: -45%;
+	transform: translateX(-50%);
+	width: min(1100px, 130%);
+}
+
+.gos-hero > * {
+	position: relative;
+	z-index: 1;
+}
+
+.gos-hero h1 {
+	text-wrap: balance;
+}
+
+.gos-lead {
+	color: var(--gos-text-dim);
+	font-size: clamp(1rem, 0.95rem + 0.3vw, 1.175rem);
+	line-height: 1.65;
+	max-width: 58ch;
+}
+
+.gos-lead.has-text-align-center {
+	margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Abschluss-Band mit Handlungsaufforderung
+   -------------------------------------------------------------------------- */
+
+.gos-cta {
+	background: var(--gos-surface);
+	border: 1px solid var(--gos-border);
+	border-radius: var(--gos-radius-lg);
+	overflow: hidden;
+	position: relative;
+}
+
+.gos-cta::before {
+	background: linear-gradient(90deg, var(--gos-accent), var(--gos-cyan), var(--gos-green));
+	content: "";
+	height: 3px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Fensterrahmen um Screenshots
+   -------------------------------------------------------------------------- */
+
+.gos-window {
+	background: var(--gos-surface);
+	border: 1px solid var(--gos-border);
+	border-radius: var(--gos-radius-lg);
+	box-shadow: var(--gos-shadow-lg);
+	overflow: hidden;
+	position: relative;
+}
+
+/* Kein margin-Reset hier: das constrained-Layout von WordPress erzeugt den
+   Abstand zum vorherigen Block ueber margin-block-start. Wird der genullt,
+   klebt der Rahmen an den Buttons darueber. */
+
+/* Titelleiste */
+.gos-window::before {
+	background: var(--gos-surface-2);
+	border-bottom: 1px solid var(--gos-border);
+	content: "";
+	display: block;
+	height: 36px;
+}
+
+/* Ampelpunkte */
+.gos-window::after {
+	background: var(--gos-dot-red);
+	border-radius: 50%;
+	box-shadow: 15px 0 0 var(--gos-dot-yellow), 30px 0 0 var(--gos-dot-green);
+	content: "";
+	height: 9px;
+	left: 16px;
+	position: absolute;
+	top: 14px;
+	width: 9px;
+}
+
+.gos-window img {
+	border-radius: 0;
+	display: block;
+	height: auto;
+	margin: 0;
+	width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Bilder allgemein
+   -------------------------------------------------------------------------- */
+
+.wp-block-image:not(.gos-window) img {
+	border-radius: var(--gos-radius);
+}
+
+/* --------------------------------------------------------------------------
+   Karten
+   -------------------------------------------------------------------------- */
+
+.gos-card {
+	background: var(--gos-surface);
+	border: 1px solid var(--gos-border);
+	border-radius: var(--gos-radius-lg);
+	padding: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gos-card:hover {
+	border-color: var(--gos-border-strong);
+	transform: translateY(-2px);
+}
+
+.gos-card h3 {
+	margin-top: 0;
+}
+
+/* Kartenraster fuer gleich hohe Spalten */
+.gos-card-grid.wp-block-columns {
+	align-items: stretch;
+}
+
+.gos-card-grid .wp-block-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.gos-card-grid .wp-block-column > .gos-card {
+	flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Listen
+   -------------------------------------------------------------------------- */
+
+.wp-block-list.is-style-checkmark-list {
+	list-style: none;
+	padding-left: 0 !important;
+}
+
+.wp-block-list.is-style-checkmark-list li {
+	padding-left: 1.9em;
+	position: relative;
+}
+
+.wp-block-list.is-style-checkmark-list li::before {
+	color: var(--gos-green);
+	content: "✓";
+	font-weight: 700;
+	left: 0;
+	position: absolute;
+}
+
+/* Nummerierte Listen mit Monospace-Zaehler statt Standardmarke. */
+.wp-block-list.gos-steps {
+	counter-reset: gos-step;
+	list-style: none;
+	padding-left: 0 !important;
+}
+
+.wp-block-list.gos-steps > li {
+	counter-increment: gos-step;
+	margin-bottom: 1rem;
+	padding-left: 3rem;
+	position: relative;
+}
+
+.wp-block-list.gos-steps > li::before {
+	background: var(--gos-accent-soft);
+	border: 1px solid var(--gos-accent);
+	border-radius: 6px;
+	color: var(--gos-accent-hover);
+	content: counter(gos-step, decimal-leading-zero);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	left: 0;
+	line-height: 1.7rem;
+	position: absolute;
+	text-align: center;
+	top: 0.1em;
+	width: 2.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.wp-block-button__link {
+	border-radius: 8px;
+	font-weight: 500;
+	padding: 0.85em 1.6em;
+	transition: background-color 0.15s ease, border-color 0.15s ease,
+		color 0.15s ease, transform 0.15s ease;
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-1px);
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
+	background-color: var(--gos-accent-hover);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border: 1px solid var(--gos-border-strong);
+	color: var(--gos-text);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+	background: var(--gos-accent-soft);
+	border-color: var(--gos-accent);
+	color: var(--gos-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+
+/* backdrop-filter darf NICHT auf dem <header> selbst liegen: es macht das
+   Element zum containing block fuer position:fixed-Nachfahren, wodurch das
+   mobile Menue-Overlay am Header statt am Viewport ausgerichtet wird. Der
+   Weichzeichner sitzt deshalb auf einem Pseudoelement. */
+.wp-site-blocks > header.wp-block-template-part {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.wp-site-blocks > header.wp-block-template-part::before {
+	background: var(--gos-bg);
+	background: color-mix(in srgb, var(--gos-bg) 85%, transparent);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--gos-border);
+	content: "";
+	inset: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+header.wp-block-template-part .wp-block-navigation a {
+	color: var(--gos-text);
+	padding-bottom: 2px;
+	position: relative;
+	text-decoration: none;
+}
+
+header.wp-block-template-part .wp-block-navigation a::after {
+	background: var(--gos-accent-hover);
+	bottom: -2px;
+	content: "";
+	height: 2px;
+	left: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.18s ease;
+	width: 100%;
+}
+
+header.wp-block-template-part .wp-block-navigation a:hover {
+	color: var(--gos-heading);
+}
+
+header.wp-block-template-part .wp-block-navigation a:hover::after {
+	transform: scaleX(1);
+}
+
+/* Aktueller Menuepunkt */
+header.wp-block-template-part .wp-block-navigation .current-menu-item a {
+	color: var(--gos-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Mobiles Menue-Overlay
+
+   Der Navigationsblock traegt zwar has-base-background-color /
+   has-contrast-color, diese Preset-Klassen werden in dieser Installation
+   aber von keinem Stylesheet definiert. Der Block faellt dadurch auf das
+   Weiss aus dem Core-CSS zurueck. Deshalb hier explizit ueber die Tokens.
+   -------------------------------------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--gos-bg) !important;
+	color: var(--gos-text) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open a,
+.wp-block-navigation__responsive-container.is-menu-open button {
+	color: var(--gos-text) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open a:hover {
+	color: var(--gos-accent-hover) !important;
+}
+
+/* Die Navigation erbt im Overlay die Desktop-Ausrichtung (rechtsbuendig,
+   umbrechend) und verteilt sich dadurch ueber die volle Hoehe. Im Overlay
+   soll daraus eine linksbuendige Liste mit klaren Tap-Flaechen werden. */
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__responsive-container-content {
+	align-items: stretch;
+	justify-content: flex-start;
+	padding-top: var(--wp--preset--spacing--30, 20px);
+	width: 100%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-page-list {
+	align-items: stretch !important;
+	gap: 0 !important;
+	justify-content: flex-start !important;
+	width: 100%;
+}
+
+/* Die <li> sind selbst Flex-Container mit align-items:flex-end und schieben
+   ihre Inhalte dadurch nach rechts – im Overlay sollen sie fuellen. */
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation-item {
+	align-items: stretch !important;
+	border-bottom: 1px solid var(--gos-border);
+	width: 100%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation-item__content {
+	display: block;
+	padding: 0.95rem 0;
+	text-align: left;
+	width: 100%;
+}
+
+/* Untermenue (Downloads) eingerueckt und ohne eigene Rahmen */
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__submenu-container {
+	align-items: stretch !important;
+	gap: 0 !important;
+	justify-content: flex-start !important;
+	width: 100%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__submenu-container
+	.wp-block-navigation-item {
+	border-bottom: 0;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__submenu-container
+	.wp-block-navigation-item__content {
+	opacity: 0.8;
+	padding-left: 1.25rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+/* Die Unterstreichungs-Animation der Desktop-Navigation stoert im Overlay */
+.wp-block-navigation__responsive-container.is-menu-open a::after {
+	content: none;
+}
+
+header.wp-block-template-part .wp-block-navigation .current-menu-item a::after {
+	transform: scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.gos-footer {
+	background-color: var(--gos-footer-bg);
+	border-top: 1px solid var(--gos-border);
+	color: var(--gos-footer-text);
+}
+
+.gos-footer h1,
+.gos-footer h2,
+.gos-footer h3,
+.gos-footer h4 {
+	color: var(--gos-footer-text);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.gos-footer h3 {
+	font-size: 0.8125rem;
+	opacity: 0.65;
+}
+
+.gos-footer a {
+	color: var(--gos-footer-text);
+	opacity: 0.8;
+	text-decoration: none;
+	transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.gos-footer a:hover {
+	color: var(--gos-cyan);
+	opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   News / Query Loop
+   -------------------------------------------------------------------------- */
+
+.wp-block-post-title a {
+	color: var(--gos-heading);
+	text-decoration: none;
+}
+
+.wp-block-post-title a:hover {
+	color: var(--gos-accent-hover);
+}
+
+.wp-block-post-excerpt {
+	color: var(--gos-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Formulare
+   -------------------------------------------------------------------------- */
 
 .gfield_consent_label {
 	cursor: pointer;
 }
 
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 767.98px) {
 	.wp-block-columns.mobile-reverse-rows {
 		flex-direction: column-reverse;
 	}
+
+	.gos-hero::before {
+		background-size: 40px 40px;
+	}
 }
 
-strong {
-	font-weight: 600;
-}
+/* --------------------------------------------------------------------------
+   Bewegung reduzieren
+   -------------------------------------------------------------------------- */
 
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 0.95em;
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-  white-space: nowrap;
-	background: var(--wp--preset--color--custom-blau);
-	color: var(--wp--preset--color--custom-weiss);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.wp-block-button__link:hover,
+	.gos-card:hover {
+		transform: none;
+	}
 }

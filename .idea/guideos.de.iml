@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/wp-content/plugins/wp-seopress/src" isTestSource="false" packagePrefix="SEOPress" />
       <sourceFolder url="file://$MODULE_DIR$/wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
       <sourceFolder url="file://$MODULE_DIR$/wp-includes/SimplePie/src" isTestSource="false" packagePrefix="SimplePie" />
+      <excludeFolder url="file://$MODULE_DIR$/wp-content/uploads" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

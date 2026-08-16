@@ -1,23 +1,147 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --wp-preset-color-black: #f6f6f6;
-    --wp--preset--color--custom-schwarz: #f6f6f6;
-  }
-  body,
-  .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-    background-color: #121212;
-  }
-  .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-    color: var(--wp--preset--color--custom-schwarz);
-  }
-  .gform_wrapper {
-    label,
-    legend.gfield_label,
-    .gfield_description {
-      color: #f6f6f6 !important;
-    }
-    .gpfup__droparea {
-      border-color: rgba(222, 222, 222, 0.35);
-    }
-  }
+/* ==========================================================================
+   GuideOS – Farbsystem (Design Tokens)
+
+   Dark-first: :root traegt das dunkle Schema. Hell wird ueber
+   prefers-color-scheme: light gesetzt, damit Besucher mit heller
+   Systemeinstellung weiterhin eine helle Seite bekommen.
+
+   Alle Farben der Seite laufen ueber diese Tokens. Wer das Erscheinungsbild
+   aendern will, aendert hier – nicht in global.css.
+   ========================================================================== */
+
+:root {
+	color-scheme: dark;
+
+	/* Flaechen */
+	--gos-bg: #0d1117;
+	--gos-bg-alt: #10161f;
+	--gos-surface: #161d27;
+	--gos-surface-2: #1d2632;
+	--gos-border: #2b3542;
+	--gos-border-strong: #3d4a5c;
+
+	/* Text */
+	--gos-text: #e6edf3;
+	--gos-text-dim: #9aa8b6;
+	--gos-heading: #f0f6fc;
+
+	/* Akzente */
+	--gos-accent: #1f6feb;
+	--gos-accent-hover: #388bfd;
+	--gos-accent-soft: rgba(31, 111, 235, 0.16);
+	--gos-green: #3fb950;
+	--gos-cyan: #56d4dd;
+	--gos-on-accent: #ffffff;
+
+	/* Effekte */
+	--gos-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	--gos-shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.85);
+	--gos-radius: 10px;
+	--gos-radius-lg: 16px;
+
+	/* Fensterrahmen-Punkte (Ampel) */
+	--gos-dot-red: #ff5f57;
+	--gos-dot-yellow: #febc2e;
+	--gos-dot-green: #28c840;
+
+	/* Footer bleibt in beiden Schemata dunkel – als ruhiger Abschluss
+	   statt eines grellen Farbblocks. */
+	--gos-footer-bg: #0a0e14;
+	--gos-footer-text: #c9d4e0;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+
+		--gos-bg: #f5f7fa;
+		--gos-bg-alt: #ffffff;
+		--gos-surface: #ffffff;
+		--gos-surface-2: #eef1f5;
+		--gos-border: #d9e0e8;
+		--gos-border-strong: #b6c1cd;
+
+		--gos-text: #16202b;
+		--gos-text-dim: #55636f;
+		--gos-heading: #0b1219;
+
+		/* Dunkler als im Dark Mode, damit weisser Text auf Buttons
+		   und der Akzent auf hellem Grund den Kontrast halten. */
+		--gos-accent: #1257c9;
+		--gos-accent-hover: #0e46a3;
+		--gos-accent-soft: rgba(18, 87, 201, 0.1);
+		--gos-green: #1a7f37;
+		--gos-cyan: #0b7285;
+
+		--gos-shadow: 0 1px 2px rgba(16, 24, 40, 0.08);
+		--gos-shadow-lg: 0 24px 60px -24px rgba(16, 24, 40, 0.28);
+
+		--gos-footer-bg: #16202b;
+		--gos-footer-text: #e6edf3;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   Bruecke zu den WordPress-Presets
+
+   Bestehende Inhalte referenzieren die Farb-Slugs (has-custom-blau-…) direkt
+   im Markup. Statt jeden Block anzufassen, zeigen die Preset-Variablen hier
+   auf die Tokens – dadurch folgen auch alte Beitraege automatisch dem Schema.
+
+   custom-weiss bleibt bewusst echtes Weiss: es wird als Textfarbe auf
+   farbigem Grund (Buttons, Footer) verwendet und muss dort weiss bleiben.
+   -------------------------------------------------------------------------- */
+
+:root {
+	--wp--preset--color--custom-blau: var(--gos-accent);
+	--wp--preset--color--custom-grau: var(--gos-border);
+	--wp--preset--color--custom-schwarz: var(--gos-text);
+	--wp--preset--color--custom-gruen: var(--gos-green);
+	--wp--preset--color--custom-cyan: var(--gos-cyan);
+	--wp--preset--color--custom-flaeche: var(--gos-surface);
+	--wp--preset--color--custom-hintergrund: var(--gos-bg);
+
+	/* Presets des Parent-Themes. base/contrast sind ein Paar (Flaeche +
+	   Text darauf) und muessen zusammen umgeschaltet werden – sonst steht
+	   z. B. im mobilen Menue heller Text auf hellem Grund. */
+	--wp--preset--color--base: var(--gos-bg);
+	--wp--preset--color--contrast: var(--gos-text);
+}
+
+/* --------------------------------------------------------------------------
+   Gravity Forms folgt dem Schema
+   -------------------------------------------------------------------------- */
+
+.gform_wrapper {
+	label,
+	legend.gfield_label,
+	.gfield_description {
+		color: var(--gos-text);
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	select,
+	textarea {
+		background-color: var(--gos-surface);
+		border: 1px solid var(--gos-border);
+		border-radius: var(--gos-radius);
+		color: var(--gos-text);
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		border-color: var(--gos-accent);
+		box-shadow: 0 0 0 3px var(--gos-accent-soft);
+		outline: none;
+	}
+
+	.gpfup__droparea {
+		border-color: var(--gos-border-strong);
+	}
 }
